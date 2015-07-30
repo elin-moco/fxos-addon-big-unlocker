@@ -1,0 +1,19 @@
+{
+  "name": "System - Bigger Unlocker",
+  "description": "Enlarge unlocker on lockscreen",
+  "developer": {
+    "name": "Eddie Lin",
+    "url": "http://yshl.in"
+  },
+  "package_path": "package.zip",
+  "role": "addon",
+  "type": "certified",
+  "customizations": [{
+    "filter": "system.gaiamobile.org",
+    "css": [],
+    "scripts": ["index.js"]
+  }],
+  "icons": {
+    "128": "icons/unlock.png"
+  }
+}
