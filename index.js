@@ -1,5 +1,6 @@
 (function () {
-  var MANIFEST_URL = '/fxos-addon-big-unlocker/manifest.webapp';
+  //var MANIFEST_URL = 'app://37600e13-1b21-f74d-a39d-84f0b42dbd63/manifest.webapp';
+  var MANIFEST_URL = 'https://elin-moco.github.io/fxos-addon-big-unlocker/manifest.webapp';
 
   // If injecting into an app that was already running at the time
   // the app was enabled, simply initialize it.
@@ -32,7 +33,7 @@
 
   navigator.mozApps.mgmt.onenabledstatechange = function(event) {
     var app = event.application;
-    if (app.manifestURL.indexOf(MANIFEST_URL) > 0 && !app.enabled) {
+    if (app.manifestURL === MANIFEST_URL && !app.enabled) {
       uninitialize();
     }
   };

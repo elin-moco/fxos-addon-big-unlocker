@@ -1,0 +1,9 @@
+{
+  "name": "System - Bigger Unlocker",
+  "description": "Enlarge unlocker on lockscreen",
+  "developer": {
+    "name": "Eddie Lin",
+    "url": "http://yshl.in"
+  },
+  "package_path": "extension.zip"
+}

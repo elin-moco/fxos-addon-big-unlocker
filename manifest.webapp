@@ -1,7 +1,6 @@
 {
   "name": "System - Bigger Unlocker",
   "description": "Enlarge unlocker on lockscreen",
-  "origin": "app://fxos-addon-big-unlocker/manifest.webapp",
   "developer": {
     "name": "Eddie Lin",
     "url": "http://yshl.in"
