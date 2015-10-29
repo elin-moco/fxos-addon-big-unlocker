@@ -1,6 +1,4 @@
 (function () {
-  //var MANIFEST_URL = 'app://37600e13-1b21-f74d-a39d-84f0b42dbd63/manifest.webapp';
-  var MANIFEST_URL = 'https://elin-moco.github.io/fxos-addon-big-unlocker/manifest.webapp';
 
   // If injecting into an app that was already running at the time
   // the app was enabled, simply initialize it.
@@ -28,13 +26,17 @@
   function uninitialize() {
     var $$ = document.getElementById.bind(document);
     var containerEl = $$('lockscreen-icon-container');
-    containerEl.removeAttribute('style');
+    if (containerEl) {
+      containerEl.removeAttribute('style');
+    }
+    navigator.mozApps.mgmt.removeEventListener('enabledstatechange', onEnabledStateChange);
   }
 
-  navigator.mozApps.mgmt.onenabledstatechange = function(event) {
+  function onEnabledStateChange(event) {
     var app = event.application;
-    if (app.manifestURL === MANIFEST_URL && !app.enabled) {
+    if (app.manifest.name === 'System - Bigger Unlocker' && !app.enabled) {
       uninitialize();
     }
-  };
+  }
+  navigator.mozApps.mgmt.addEventListener('enabledstatechange', onEnabledStateChange);
 }());
